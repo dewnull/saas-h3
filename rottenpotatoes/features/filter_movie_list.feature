@@ -35,4 +35,7 @@ When I check the following ratings: PG, R
   And I should not see "2001: A Space Odyssey"
   And I should not see "Chicken Run" 
 Scenario: all ratings selected
+When I check the following ratings: G, PG, PG-13, NC-17, R
+  And I press "Refresh" 
+  Then I should see all the movies
  

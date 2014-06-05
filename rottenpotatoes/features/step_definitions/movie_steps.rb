@@ -43,9 +43,10 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  #dbrows = Movie.find_all_by_rating("PG","R").count
-  #rows =page.all('table#movies tr').count -1
-  #rows.should =dbrows
-
-  flunk "Unimplemented"
-end
+  dbrows= Movie.all.count
+  rows = page.all('#movies tr').count() -1
+puts dbrows
+  puts rows
+  rows.should == dbrows
+  #page.shoud have_css "#movies tr", :count => dbrows.to_i
+ end
